@@ -1,0 +1,114 @@
+# Finite State Machines
+
+## Lucas Reis
+
+---
+
+## Lucas Reis
+
+Senior Front End Engineer at Zocdoc 
+
+_@iamlucasmreis_
+
+---
+
+Did you go from 
+
+## Infinite Planning
+
+to 
+
+## No Planning At All
+
+?
+
+---
+
+### We are getting too far on the other side of the pendulum
+
+---
+
+_Wait, are you bringing back WATERFALL???_
+
+(horror movie gif)
+
+<img src="https://media.giphy.com/media/3ofSBoGaRAsrGTbb56/giphy.gif" />
+
+---
+
+No, I'm only claiming we need **some** planning
+
+_not two months, but something from two hours to two days!_
+
+---
+
+1. Coding is more **costly** than planning
+2. We are able to solve **big problems** and catch bugs with planning
+3. During planning we're able to leverage knowledge of **non-coders** too 
+
+---
+
+## Finite State Machines are a great tool for planning UIs
+
+---
+
+### What Are Finite State Machines? 1/2
+
+(initial oven state machine)
+
+---
+
+### What Are Finite State Machines? 2/2
+
+1. A list of **states**
+2. One **initial** state
+3. A list of events that trigger **transitions**
+4. Transitions may be conditional (**guards**)
+5. A state can trigger **actions** upon entering or exiting a state
+
+---
+
+### Statecharts FTW 1/2
+
+We just need to expand it a bit...
+
+(oven statechart)
+
+---
+
+### Statecharts FTW 2/2
+
+1. Hierachy: states can have **substates**
+2. Parallelism: the system may have **multiple** machines
+3. Broadcasting: one machine can react to events sent by **other** machines
+
+---
+
+Statecharts are: 
+
+* High-level enough to be able to be developed by non-coders
+* Low-level enough to actually help you with your code
+
+---
+
+### Let's implement a React component using a statechart!
+
+---
+
+Insurance Picker
+
+(show it)
+
+---
+
+Prototype With Sketch.systems
+
+--- 
+
+Create statechart in xviz
+
+---
+
+Use React Automata to create component
+
+
