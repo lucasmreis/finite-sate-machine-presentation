@@ -1,0 +1,16 @@
+{
+  "key": "Oven",
+  "initial": "off",
+  "states": {
+    "off": {
+      "on": {
+        "BAKE_PRESSED": "heating"
+      }
+    },
+    "heating": {
+      "on": {
+        "OFF_PRESSED": "off"
+      }
+    }
+  }
+}

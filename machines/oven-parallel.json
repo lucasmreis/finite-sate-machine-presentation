@@ -1,0 +1,50 @@
+{
+  "key": "Oven Machine",
+  "parallel": true,
+  "states": {
+    "oven": {
+      "initial": "off",
+      "states": {
+        "off": {
+          "on": {
+            "BAKE_PRESSED": "baking"
+          }
+        },
+        "baking": {
+          "on": {
+            "OFF_PRESSED": "off"
+          },
+          "initial": "heating",
+          "states": {
+            "heating": {
+              "on": {
+                "TOO_HOT": "idling"
+              }
+            },
+            "idling": {
+              "on": {
+                "TOO_COLD": "heating"
+              }
+            }
+          }
+        }
+      }
+    },
+    "ovenLight": {
+      "initial": "lightsOff",
+      "states": {
+        "lightsOff": {
+          "on": {
+            "LIGHT_ON": "lightsOn"
+          }
+        },
+        "lightsOn": {
+          "on": {
+            "LIGHT_OFF": "lightsOff",
+            "OFF_PRESSED": "lightsOff"
+          }
+        }
+      }
+    }
+  }
+}

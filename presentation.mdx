@@ -30,9 +30,7 @@ to
 
 _Wait, are you bringing back WATERFALL???_
 
-(horror movie gif)
-
-<img src="https://media.giphy.com/media/3ofSBoGaRAsrGTbb56/giphy.gif" />
+<Image src="static/scared.gif" />
 
 ---
 
@@ -51,14 +49,21 @@ _not two months, but something from two hours to two days!_
 ## Finite State Machines are a great tool for planning UIs
 
 ---
+import { Image } from './image'
 
-### What Are Finite State Machines? 1/2
+### What Are Finite State Machines?
 
-(initial oven state machine)
+<Image src="machines/oven.png"/>
 
 ---
 
-### What Are Finite State Machines? 2/2
+### What Are Finite State Machines?
+
+<Image src="machines/oven-with-idling.png"/>
+
+---
+
+### What Are Finite State Machines?
 
 1. A list of **states**
 2. One **initial** state
@@ -68,15 +73,21 @@ _not two months, but something from two hours to two days!_
 
 ---
 
-### Statecharts FTW 1/2
+### Statecharts FTW
 
 We just need to expand it a bit...
 
-(oven statechart)
+<Image src="machines/oven-substates.png"/>
 
 ---
 
-### Statecharts FTW 2/2
+### Statecharts FTW
+
+<Image src="machines/oven-parallel.png"/>
+
+---
+
+### Statecharts FTW
 
 1. Hierachy: states can have **substates**
 2. Parallelism: the system may have **multiple** machines
@@ -111,4 +122,16 @@ Create statechart in xviz
 
 Use React Automata to create component
 
+---
 
+Benefits of using it
+
+---
+
+Future possibilities
+
+---
+
+Current problems
+- people are not familiar with it
+- ecossystem

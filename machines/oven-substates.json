@@ -1,0 +1,29 @@
+{
+  "key": "Oven",
+  "initial": "off",
+  "states": {
+    "off": {
+      "on": {
+        "BAKE_PRESSED": "baking"
+      }
+    },
+    "baking": {
+      "on": {
+        "OFF_PRESSED": "off"
+      },
+      "initial": "heating",
+      "states": {
+        "heating": {
+          "on": {
+            "TOO_HOT": "idling"
+          }
+        },
+        "idling": {
+          "on": {
+            "TOO_COLD": "heating"
+          }
+        }
+      }
+    }
+  }
+}
