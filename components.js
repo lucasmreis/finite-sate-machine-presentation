@@ -6,4 +6,8 @@ const Image = styled.img`
   height: 80%;
 `;
 
-export { Image };
+const Code = styled.pre`
+  text-align: left;
+`;
+
+export { Image, Code };

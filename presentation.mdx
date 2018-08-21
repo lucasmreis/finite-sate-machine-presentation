@@ -49,7 +49,7 @@ _not two months, but something from two hours to two days!_
 ## Finite State Machines are a great tool for planning UIs
 
 ---
-import { Image } from './image'
+import { Image } from './components'
 
 ### What Are Finite State Machines?
 
@@ -106,17 +106,49 @@ Statecharts are:
 
 ---
 
-Insurance Picker
-
-(show it)
+<iframe 
+    src="https://codesandbox.io/embed/7y5286moy1"  
+    style={{ width: 500, borderRadius: "4px", overflow: "hidden", height: 500 }}
+    sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin">
+</iframe>
 
 ---
 
-Prototype With Sketch.systems
+### Prototype With SketchSystems
 
---- 
+<iframe 
+    src="https://sketch.systems/lucasmreis/sketch/13f3650ed126fd197855716a28588da6"
+    frameborder="no"
+    width="100%"
+    height="400">
+</iframe>
 
-Create statechart in xviz
+---
+
+import { Code } from './components'
+
+### Create statechart in xstate/xviz
+
+<Code>
+{`
+{
+  "key": "Oven",
+  "initial": "off",
+  "states": {
+    "off": {
+      "on": {
+        "BAKE_PRESSED": "heating"
+      }
+    },
+    "heating": {
+      "on": {
+        "OFF_PRESSED": "off"
+      }
+    }
+  }
+}
+`}
+</Code>
 
 ---
 
