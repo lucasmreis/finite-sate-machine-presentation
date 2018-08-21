@@ -27,6 +27,7 @@ to
 ### We are getting too far on the other side of the pendulum
 
 ---
+import { Image } from './components'
 
 _Wait, are you bringing back WATERFALL???_
 
@@ -49,7 +50,6 @@ _not two months, but something from two hours to two days!_
 ## Finite State Machines are a great tool for planning UIs
 
 ---
-import { Image } from './components'
 
 ### What Are Finite State Machines?
 
@@ -152,7 +152,129 @@ import { Code } from './components'
 
 ---
 
-Use React Automata to create component
+<Image src="machines/insurance-picker.png"/>
+
+---
+
+<iframe 
+    src="https://codesandbox.io/embed/7y5286moy1"  
+    style={{ width: 500, borderRadius: "4px", overflow: "hidden", height: 500 }}
+    sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin">
+</iframe>
+
+---
+import SyntaxHighlighter from 'react-syntax-highlighter/prism'
+import { darcula } from 'react-syntax-highlighter/styles/prism'
+
+### Use React Automata to create the component
+
+1. Declare your extended state
+
+<SyntaxHighlighter language='jsx' style={darcula}>
+{`class Container extends React.Component {
+  state = {
+    selectedCarrier: null,
+    selectedPlan: null,
+    carriers: [],
+    plans: []
+  };
+`}
+</SyntaxHighlighter>
+
+---
+
+### Use React Automata to create the component
+
+2. Actions are component methods
+
+<SyntaxHighlighter language='jsx' style={darcula}>
+{`fetchCarriers() {
+  getCarriers()
+    .then(carriers => this.setState({ carriers }))
+    .then(() => this.props.transition("CARRIERS_FETCHED"))
+    .catch(() => this.props.transition("FETCH_CARRIERS_ERROR"))
+}
+fetchPlans() {
+  getPlans(this.state.selectedCarrier)
+      .then(plans => this.setState({ plans }))
+      .then(() => this.props.transition("PLANS_FETCHED"))
+      .catch(() => this.props.transition("FETCH_PLANS_ERROR"))
+}`} 
+</SyntaxHighlighter>
+
+---
+
+### Use React Automata to create the component
+
+3. Trigger events with transition
+
+<SyntaxHighlighter language='jsx' style={darcula}>
+{`selectPlan = selectedPlan => {
+  this.setState({ selectedPlan });
+  this.props.transition("PLAN_SELECTED");
+};
+reset = () => {
+  this.setState({
+    selectedCarrier: null,
+    selectedPlan: null,
+    carriers: [],
+    plans: []
+  });
+  this.props.transition("RESET");
+};`} 
+</SyntaxHighlighter>
+
+---
+
+### Use React Automata to create the component
+
+4. Use the State and Action components
+
+<SyntaxHighlighter language='jsx' style={darcula}>
+{`<State is="menu.visibility.shown">
+  <div
+    className="takeover"
+    onClick={() => this.props.transition("CLICKED_OUTSIDE")}
+  />
+  <State is="menu.insuranceOptions.*.loading">
+    <Loading />
+  </State>
+  <State is="menu.insuranceOptions.carrierSelection.*">
+    <InsuranceList list={carriers} onSelect={this.selectCarrier} />
+  </State>
+  <State is="menu.insuranceOptions.planSelection.*">
+    <InsuranceList list={plans} onSelect={this.selectPlan} />
+  </State>
+  <State is="menu.insuranceOptions.resetInsuranceQuestion">
+    <ResetInsuranceQuestion onReset={this.reset} />
+  </State>
+</State>`} 
+</SyntaxHighlighter>
+
+---
+
+### Use React Automata to create the component
+
+5. Wrap it with the statechart in the HOC
+
+<SyntaxHighlighter language='jsx' style={darcula}>
+{`const InsurancePicker = withStateMachine(statechart)(Container);`} 
+</SyntaxHighlighter>
+
+---
+import { ImageV } from './components'
+
+### Use React Automata to create the component
+
+<ImageV src="static/whole-component.png"/>
+
+---
+
+<iframe 
+    src="https://codesandbox.io/embed/7y5286moy1"  
+    style={{ width: 500, borderRadius: "4px", overflow: "hidden", height: 500 }}
+    sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin">
+</iframe>
 
 ---
 

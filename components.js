@@ -3,11 +3,15 @@ import styled from "styled-components";
 
 const Image = styled.img`
   width: 80%;
-  height: 80%;
+  max-height: 70vh;
+`;
+
+const ImageV = styled.img`
+  max-height: 70vh;
 `;
 
 const Code = styled.pre`
   text-align: left;
 `;
 
-export { Image, Code };
+export { Image, ImageV, Code };

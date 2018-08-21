@@ -11,5 +11,8 @@
   "license": "ISC",
   "devDependencies": {
     "mdx-deck": "^1.6.4"
+  },
+  "dependencies": {
+    "react-syntax-highlighter": "^8.0.1"
   }
 }
