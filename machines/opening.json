@@ -1,0 +1,17 @@
+{
+  "key": "ReactNYC",
+  "initial": "Better UIs",
+  "states": {
+    "Better UIs": {
+      "on": {
+        "WITH": "State Machines"
+      }
+    },
+    "State Machines": {
+      "on": {
+        "BY": "Lucas Reis"
+      }
+    },
+    "Lucas Reis": {}
+  }
+}

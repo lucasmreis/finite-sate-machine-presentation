@@ -12,6 +12,7 @@ const ImageV = styled.img`
 
 const Code = styled.pre`
   text-align: left;
+  font-size: 0.7em;
 `;
 
 export { Image, ImageV, Code };

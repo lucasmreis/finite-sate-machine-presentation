@@ -1,6 +1,6 @@
-# Finite State Machines
+import { Image } from './components'
 
-## Lucas Reis
+<img style={{ height: "80vh" }} src="machines/opening.png" />
 
 ---
 
@@ -9,6 +9,8 @@
 Senior Front End Engineer at Zocdoc 
 
 _@iamlucasmreis_
+
+<img style={{ height: "80px" }} src="static/zocdoc.png" />
 
 ---
 
@@ -24,14 +26,13 @@ to
 
 ---
 
-### We are getting too far on the other side of the pendulum
+### We are getting too far to the other side of the pendulum
 
 ---
-import { Image } from './components'
 
 _Wait, are you bringing back WATERFALL???_
 
-<Image src="static/scared.gif" />
+<img style={{ width: 500 }} src="static/scared.gif" />
 
 ---
 
@@ -53,13 +54,13 @@ _not two months, but something from two hours to two days!_
 
 ### What Are Finite State Machines?
 
-<Image src="machines/oven.png"/>
+<img style={{ width: 500 }} src="machines/oven.png"/>
 
 ---
 
 ### What Are Finite State Machines?
 
-<Image src="machines/oven-with-idling.png"/>
+<img style={{ width: 500 }} src="machines/oven-with-idling.png"/>
 
 ---
 
@@ -77,13 +78,13 @@ _not two months, but something from two hours to two days!_
 
 We just need to expand it a bit...
 
-<Image src="machines/oven-substates.png"/>
+<img style={{ width: 500 }} src="machines/oven-substates.png"/>
 
 ---
 
 ### Statecharts FTW
 
-<Image src="machines/oven-parallel.png"/>
+<img style={{ width: 500 }} src="machines/oven-parallel.png"/>
 
 ---
 
@@ -103,6 +104,10 @@ Statecharts are:
 ---
 
 ### Let's implement a React component using a statechart!
+
+---
+
+<img style={{ width: 500 }} src="static/lets-do-this.gif"/>
 
 ---
 
@@ -152,7 +157,7 @@ import { Code } from './components'
 
 ---
 
-<Image src="machines/insurance-picker.png"/>
+<img style={{ height: "80vh" }} src="machines/insurance-picker.png"/>
 
 ---
 
@@ -170,6 +175,7 @@ import { darcula } from 'react-syntax-highlighter/styles/prism'
 
 1. Declare your extended state
 
+<div style={{ fontSize: '0.6em' }}>
 <SyntaxHighlighter language='jsx' style={darcula}>
 {`class Container extends React.Component {
   state = {
@@ -180,13 +186,13 @@ import { darcula } from 'react-syntax-highlighter/styles/prism'
   };
 `}
 </SyntaxHighlighter>
+</div>
 
 ---
 
-### Use React Automata to create the component
-
 2. Actions are component methods
 
+<div style={{ fontSize: '0.6em' }}>
 <SyntaxHighlighter language='jsx' style={darcula}>
 {`fetchCarriers() {
   getCarriers()
@@ -201,13 +207,13 @@ fetchPlans() {
       .catch(() => this.props.transition("FETCH_PLANS_ERROR"))
 }`} 
 </SyntaxHighlighter>
+</div>
 
 ---
 
-### Use React Automata to create the component
-
 3. Trigger events with transition
 
+<div style={{ fontSize: '0.6em' }}>
 <SyntaxHighlighter language='jsx' style={darcula}>
 {`selectPlan = selectedPlan => {
   this.setState({ selectedPlan });
@@ -223,13 +229,13 @@ reset = () => {
   this.props.transition("RESET");
 };`} 
 </SyntaxHighlighter>
+</div>
 
 ---
 
-### Use React Automata to create the component
-
 4. Use the State and Action components
 
+<div style={{ fontSize: '0.6em' }}>
 <SyntaxHighlighter language='jsx' style={darcula}>
 {`<State is="menu.visibility.shown">
   <div
@@ -250,10 +256,9 @@ reset = () => {
   </State>
 </State>`} 
 </SyntaxHighlighter>
+</div>
 
 ---
-
-### Use React Automata to create the component
 
 5. Wrap it with the statechart in the HOC
 
@@ -278,14 +283,52 @@ import { ImageV } from './components'
 
 ---
 
-Benefits of using it
+Overall benefits
+
+## Preciseness of specs
+## Correctness of code
 
 ---
 
-Future possibilities
+### Benefits for a React app
+
+* Smaller React Component
+* Less noise, less unimportant state
+* No if clauses
+* Design help from tooling
 
 ---
 
-Current problems
-- people are not familiar with it
-- ecossystem
+### Future
+
+* More vizualization tools
+* More tools to assert correctness
+* More ways to integrate with JS 
+
+---
+
+### Current problems
+
+* Lack of familiarity from devs and designers
+* Small ecossystem
+
+---
+
+### Thank you very much!
+
+Lucas Reis
+
+_@iamlucasmreis_
+
+<img style={{ height: "80px" }} src="static/zocdoc.png" />
+
+---
+
+### Important links:
+
+* https://statecharts.github.io/
+* https://spectrum.chat/statecharts
+* https://github.com/davidkpiano/xstate
+* https://github.com/MicheleBertoli/react-automata
+* https://github.com/avaragado/xstateful
+* https://github.com/avaragado/xstateful-react
