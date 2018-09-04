@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "mdx-deck presentation.mdx",
+    "start": "mdx-deck nordicjs-presentation.mdx",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
